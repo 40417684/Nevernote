@@ -1,0 +1,125 @@
+<html>
+<head>
+	<title>Nevernote</title>
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	
+	<!-- local css -->
+	<link href="css/index.css" rel="stylesheet">
+	
+	<!-- Favicon -->
+	<link rel="icon" href="img/hippo.png" type="image/png">
+	
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<!-- Bootstrap JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<!-- Local JS -->
+	<script src="js\index.js"></script>
+	
+	<!-- Setting Viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<div id="header" class="shadow">
+		<img id="hippohead"	src="img/hippo.png"></img>
+		<div id="headTitle"><span>Nevernote</span></div>
+		<div id="loginButton"><a href="#" class="btn accountBtn" onclick="loginModal()">Login</a></div>
+	</div>
+	
+	<div id="body">	
+		<!-- Colour Modal -->
+		<div class="modal fade" id="colorpicker" tabindex="-1" role="dialog" aria-labelledby="colorPickerLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Pick a Colour</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="center" id="coloroptions">
+							<button class="yellow colourButton" onclick="changeColor('yellow')"></button>
+							<button class="blue colourButton" onclick="changeColor('blue')"></button>
+							<button class="purple colourButton" onclick="changeColor('purple')"></button>
+							<button class="green colourButton" onclick="changeColor('green')"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Login Modal -->
+		<div id="loginmodal" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Sign In</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+				<img class="loginIcon" src="img\email.png"></img><input type="email" class="formText" placeholder="Email"></input>
+				<img class="loginIcon" src="img\pass.png"><input type="password" class="formText" placeholder="Password"></input>
+				
+				</div>
+				<div class="modal-footer">
+					
+					<h6 id="registerlink" onclick="registerModal()">Don't have an account? Register here</h6>
+					<button type="button" class="btn modalLoginBtn shadow">Login</button>
+				</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Register Module -->
+		<div id="registermodal" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Register</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+				<img class="loginIcon" src="img\email.png"></img><input type="email" class="formText" placeholder="Email"></input>
+				<img class="loginIcon" src="img\pass.png"><input type="password" class="formText" placeholder="Password"></input>
+				<img class="loginIcon" src="img\pass.png"><input type="password" class="formText" placeholder="Confirm Password"></input>
+				
+				</div>
+				<div class="modal-footer">
+					
+					<h6 id="registerlink" onclick="loginModal()">Already have an account? Register here</h6>
+					<button type="button" class="btn modalLoginBtn shadow">Submit</button>
+				</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- <div id="leftbar"> -->
+		<!-- leftbar -->
+		<!-- </div> -->
+		<div id="notes">
+			<!-- The grid: three columns -->
+			<div id="row1" class="row">
+				<div class="column white shadow" onclick="newNote();" id="newnote"><h3 class="noteTitle">New Note<b style="font-size:36px;">+</b></h3></div>
+			</div>
+			
+			<!-- The expanding grid (hidden by default) -->
+			
+			
+		</div>
+	</div>
+</body>
+</html>
